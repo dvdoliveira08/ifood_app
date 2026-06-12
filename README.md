@@ -1,3 +1,7 @@
+Integrantes: 
+Deivide Oliveira
+Luigi Fuchida
+
 # ifood_app
 
 A new Flutter project.
