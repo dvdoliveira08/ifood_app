@@ -1,6 +1,6 @@
 Integrantes: 
-Deivide Oliveira
-Luigi Fuchida
+#Deivide Oliveira
+#Luigi Fuchida
 
 # ifood_app
 
