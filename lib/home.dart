@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart'; 
-import 'tela_carrinho.dart'; 
+import 'package:carousel_slider/carousel_slider.dart';
+import 'tela_carrinho.dart';
 
 class TelaInicial extends StatefulWidget {
   const TelaInicial({super.key});
@@ -39,23 +39,23 @@ class _TelaInicialState extends State<TelaInicial> {
         child: Column(
           children: [
             const SizedBox(height: 16),
-            _construirCategoriasPrincipais(), 
+            _construirCategoriasPrincipais(),
             const SizedBox(height: 24),
-            opcoesComida(),                  
+            opcoesComida(),
             const SizedBox(height: 24),
-            _construirCarrosselSlider(),     
-            const SizedBox(height: 16), 
-            _construirCardsPromocionais(),   
+            _construirCarrosselSlider(),
+            const SizedBox(height: 16),
+            _construirCardsPromocionais(),
             const SizedBox(height: 24),
-            _construirUltimasLojas(),        
+            _construirUltimasLojas(),
             const SizedBox(height: 24),
-            _construirBannerFixo(),          
-            const SizedBox(height: 100), 
+            _construirBannerFixo(),
+            const SizedBox(height: 100),
           ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Container(
+      floatingActionButton: SizedBox(
         width: MediaQuery.of(context).size.width * 0.92,
         height: 50,
         child: FloatingActionButton.extended(
@@ -67,7 +67,7 @@ class _TelaInicialState extends State<TelaInicial> {
               MaterialPageRoute(builder: (context) => const TelaCarrinho()),
             );
           },
-          label: Container(
+          label: SizedBox(
             width: MediaQuery.of(context).size.width * 0.8,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -76,21 +76,45 @@ class _TelaInicialState extends State<TelaInicial> {
                   children: [
                     Container(
                       padding: const EdgeInsets.all(4),
-                      decoration: const BoxDecoration(color: Color(0xFF2B2B2B), shape: BoxShape.circle),
-                      child: const Icon(Icons.shopping_bag, color: Colors.white, size: 16),
+                      decoration: const BoxDecoration(
+                        color: Color(0xFF2B2B2B),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        Icons.shopping_bag,
+                        color: Colors.white,
+                        size: 16,
+                      ),
                     ),
                     const SizedBox(width: 8),
                     const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Total com a entrega', style: TextStyle(color: Colors.grey, fontSize: 10)),
-                        Text('R\$ 96,50 / 1 item', style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold)),
+                        Text(
+                          'Total com a entrega',
+                          style: TextStyle(color: Colors.grey, fontSize: 10),
+                        ),
+                        Text(
+                          'R\$ 96,50 / 1 item',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
                     ),
                   ],
                 ),
-                const Text('Ver sacola', style: TextStyle(color: Color(0xFFEA1D2C), fontWeight: FontWeight.bold, fontSize: 14)),
+                const Text(
+                  'Ver sacola',
+                  style: TextStyle(
+                    color: Color(0xFFEA1D2C),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                ),
               ],
             ),
           ),
@@ -107,17 +131,31 @@ class _TelaInicialState extends State<TelaInicial> {
       title: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Boa noite, Deivide', style: TextStyle(color: Colors.grey, fontSize: 12)),
+          Text(
+            'Boa noite, Deivide',
+            style: TextStyle(color: Colors.grey, fontSize: 12),
+          ),
           Row(
             children: [
-              Text('Av. Três de Maio, 307', style: TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold)),
+              Text(
+                'Av. Três de Maio, 307',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               Icon(Icons.keyboard_arrow_down, color: Colors.red, size: 20),
             ],
           ),
         ],
       ),
       actions: [
-        CircleAvatar(backgroundColor: Colors.purple[50], radius: 20, child: const Icon(Icons.diamond, color: Colors.purple, size: 20)),
+        CircleAvatar(
+          backgroundColor: Colors.purple[50],
+          radius: 20,
+          child: const Icon(Icons.diamond, color: Colors.purple, size: 20),
+        ),
         const SizedBox(width: 12),
         const Icon(Icons.notifications_outlined, color: Colors.black, size: 28),
         const SizedBox(width: 16),
@@ -131,9 +169,9 @@ class _TelaInicialState extends State<TelaInicial> {
         CarouselSlider(
           options: CarouselOptions(
             height: 150.0,
-            autoPlay: true,          
-            viewportFraction: 0.89,  
-            enlargeCenterPage: false, 
+            autoPlay: true,
+            viewportFraction: 0.89,
+            enlargeCenterPage: false,
             onPageChanged: (index, reason) {
               setState(() {
                 _paginaAtual = index;
@@ -158,17 +196,41 @@ class _TelaInicialState extends State<TelaInicial> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(banner['titulo'], style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                            Text(
+                              banner['titulo'],
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                             const SizedBox(height: 12),
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
-                              child: Text(banner['botao'], style: TextStyle(color: banner['cor'], fontSize: 12, fontWeight: FontWeight.bold)),
-                            )
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 6,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Text(
+                                banner['botao'],
+                                style: TextStyle(
+                                  color: banner['cor'],
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
-                      const Icon(Icons.fastfood, size: 70, color: Colors.white38),
+                      const Icon(
+                        Icons.fastfood,
+                        size: 70,
+                        color: Colors.white38,
+                      ),
                     ],
                   ),
                 );
@@ -186,7 +248,9 @@ class _TelaInicialState extends State<TelaInicial> {
               margin: const EdgeInsets.symmetric(horizontal: 4.0),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.black.withOpacity(_paginaAtual == entry.key ? 0.9 : 0.2),
+                color: Colors.black.withAlpha(
+                  (_paginaAtual == entry.key ? 0.9 : 0.2 * 255).round(),
+                ),
               ),
             );
           }).toList(),
@@ -232,12 +296,20 @@ class _TelaInicialState extends State<TelaInicial> {
       child: Column(
         children: [
           Container(
-            height: 55, width: 55,
-            decoration: BoxDecoration(color: Colors.grey[100], borderRadius: BorderRadius.circular(12)),
+            height: 55,
+            width: 55,
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+              borderRadius: BorderRadius.circular(12),
+            ),
             child: Icon(icone, color: cor, size: 30),
           ),
           const SizedBox(height: 8),
-          Text(titulo, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w600), overflow: TextOverflow.ellipsis),
+          Text(
+            titulo,
+            style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
+            overflow: TextOverflow.ellipsis,
+          ),
         ],
       ),
     );
@@ -271,12 +343,19 @@ class _TelaInicialState extends State<TelaInicial> {
       child: Column(
         children: [
           Container(
-            height: 65, width: 85,
-            decoration: BoxDecoration(color: Colors.grey[100], borderRadius: BorderRadius.circular(8)),
+            height: 65,
+            width: 85,
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+              borderRadius: BorderRadius.circular(8),
+            ),
             child: Icon(icone, color: Colors.orange, size: 35),
           ),
           const SizedBox(height: 6),
-          Text(titulo, style: const TextStyle(fontSize: 12, color: Colors.black54)),
+          Text(
+            titulo,
+            style: const TextStyle(fontSize: 12, color: Colors.black54),
+          ),
         ],
       ),
     );
@@ -286,10 +365,23 @@ class _TelaInicialState extends State<TelaInicial> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Container(
-        height: 140, width: double.infinity,
-        decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(16)),
+        height: 140,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(16),
+        ),
         child: const Center(
-          child: Text('100 DIAS\nDE OFERTAS', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold, height: 1.1)),
+          child: Text(
+            '100 DIAS\nDE OFERTAS',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              height: 1.1,
+            ),
+          ),
         ),
       ),
     );
@@ -302,8 +394,14 @@ class _TelaInicialState extends State<TelaInicial> {
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Início'),
         BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Busca'),
-        BottomNavigationBarItem(icon: Icon(Icons.receipt_long), label: 'Pedidos'),
-        BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Perfil'),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.receipt_long),
+          label: 'Pedidos',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person_outline),
+          label: 'Perfil',
+        ),
       ],
     );
   }
@@ -315,12 +413,36 @@ class _TelaInicialState extends State<TelaInicial> {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 16),
         children: [
-          _itemCardPromocional('Famosos com\n descontão', const Color(0xFF990000), Icons.star),
-          _itemCardPromocional('burguer com\n entrega\n grátis', const Color.fromARGB(255, 135, 84, 1), Icons.lunch_dining),
-          _itemCardPromocional('entrega\n grátis aqui', const Color(0xFF990000), Icons.local_shipping),
-          _itemCardPromocional('jantar\n bom e barato', const Color.fromARGB(255, 87, 141, 79), Icons.star),
-          _itemCardPromocional('pizza\n em promo e\n entrega grátis', const Color.fromARGB(255, 43, 129, 57), Icons.local_pizza),
-          _itemCardPromocional('cupom\n até R\$30', const Color(0xFF990000), Icons.local_offer),
+          _itemCardPromocional(
+            'Famosos com\n descontão',
+            const Color(0xFF990000),
+            Icons.star,
+          ),
+          _itemCardPromocional(
+            'burguer com\n entrega\n grátis',
+            const Color.fromARGB(255, 135, 84, 1),
+            Icons.lunch_dining,
+          ),
+          _itemCardPromocional(
+            'entrega\n grátis aqui',
+            const Color(0xFF990000),
+            Icons.local_shipping,
+          ),
+          _itemCardPromocional(
+            'jantar\n bom e barato',
+            const Color.fromARGB(255, 87, 141, 79),
+            Icons.star,
+          ),
+          _itemCardPromocional(
+            'pizza\n em promo e\n entrega grátis',
+            const Color.fromARGB(255, 43, 129, 57),
+            Icons.local_pizza,
+          ),
+          _itemCardPromocional(
+            'cupom\n até R\$30',
+            const Color(0xFF990000),
+            Icons.local_offer,
+          ),
         ],
       ),
     );
@@ -342,7 +464,9 @@ class _TelaInicialState extends State<TelaInicial> {
             right: -10,
             child: Icon(
               icone,
-              color: Colors.white.withOpacity(0.15),
+              color: Colors.white.withAlpha(
+                38,
+              ), // Substitui o .withOpacity(0.15)
               size: 65,
             ),
           ),
@@ -378,18 +502,29 @@ class _TelaInicialState extends State<TelaInicial> {
             children: [
               const Text(
                 'Últimas lojas',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87),
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
               ),
               TextButton(
                 onPressed: () {},
-                child: const Text('Ver mais', style: TextStyle(color: Colors.red, fontSize: 12)),
+                child: const Text(
+                  'Ver mais',
+                  style: TextStyle(color: Colors.red, fontSize: 12),
+                ),
               ),
             ],
           ),
           const SizedBox(height: 8),
           Row(
             children: [
-              _itemLoja('Mcdonald\'s -\nSão Roque (srd...', Icons.fastfood, true),
+              _itemLoja(
+                'Mcdonald\'s -\nSão Roque (srd...',
+                Icons.fastfood,
+                true,
+              ),
               const SizedBox(width: 16),
               _itemLoja('Padaria\nColoniall II', Icons.bakery_dining, false),
             ],

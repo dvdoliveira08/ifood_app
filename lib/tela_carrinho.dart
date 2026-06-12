@@ -223,9 +223,9 @@ class TelaCarrinho extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 children: [
                  _itemSugestao(
-                    'Refrigerante Sprite\nLata 350ml', 
+                    'Coca Zero\nLata 350ml', 
                     'R\$ 7,00', 
-                    'https://upload.wikimedia.org/wikipedia/commons/e/e8/Sprite_can.png',
+                    'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200',
                   ),
                   _itemSugestao(
                     'Suco Natural\nde Laranja 500ml', 
