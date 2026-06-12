@@ -1,7 +1,7 @@
 Integrantes: 
-*Deivide Oliveira
-*Luigi Fuchida
-*afael Moraes
+* Deivide Oliveira
+* Luigi Fuchida
+* Rafael Moraes
 
 *Interface reproduzida com intuito de assimilar ao app do Ifood para a disciplina de Dispositivos Móveis I
 
